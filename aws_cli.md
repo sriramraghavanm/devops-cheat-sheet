@@ -42,3 +42,10 @@ Docker push command to push the image to AWS ECR
 
     docker push 172763042044.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
 
+List all the images from the repository.
+
+    aws ecr list-images --repository-name my-repo
+
+Delete any unwanted tags for the image by specifying the tag associated with the image you want to delete. When the last tag is deleted from an image, the image is also deleted.
+
+    aws ecr batch-delete-image --repository-name my-repo --image-ids imageTag=tag1 imageTag=tag2
